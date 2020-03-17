@@ -12,6 +12,8 @@ require_once __DIR__ . '/vendor/autoload.php';
     <meta charset="UTF-8">
     <title>Make a Meal of It</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href='normalize.css' />
     <link rel='stylesheet' type='text/css' href='styles.css' />
 </head>
@@ -22,9 +24,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 </header>
 
 <article>
-    Wondering what to have for dinner? Make a Meal of It will provide recipes based on the ingredients you have in your store cupboard.
-    Tick the ingredients you want to use in your recipe, when done, click <span>Search</span> to find matching recipes.
-    Recipes provided by <a href='http://recipepuppy.com' target='_blank'>recipepuppy.com</a>.
+    <p>Wondering what to have for dinner?</p>
+    <p>Make a Meal of It will provide recipes based on the ingredients you have in your store cupboard.
+        Tick the ingredients you want to use in your recipe, when done, click <span>SEARCH</span> to find matching recipes.</p>
+    <p>Recipes provided by <a href='http://recipepuppy.com' target='_blank'>recipepuppy.com</a>.</p>
 </article>
 
 <main>
