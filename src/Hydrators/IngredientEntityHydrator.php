@@ -5,12 +5,10 @@ class IngredientEntityHydrator {
     public function __construct(PDO $db) {
         $this->db = $db;
 }
-    public static function getAllIngredientEntities() {
+    public function getAllIngredientEntities() {
         $query = $this->db->prepare('SELECT `id`, `name` FROM `ingredients`;');
         $query->setFetchMode(PDO::FETCH_CLASS, '../IngredientEntity');
         $query->execute();
         return $query->fetchAll();
     }
 }
-
-IngredientEntityHydrator::getAllIngredientEntities();
