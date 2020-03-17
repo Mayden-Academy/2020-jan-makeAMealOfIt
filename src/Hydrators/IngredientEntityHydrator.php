@@ -13,11 +13,11 @@ class IngredientEntityHydrator {
 
     /** Return an Array of objects of the IngredientEntity class hydrated from the db.
      *
-     * @return Array
+     * @return array
      */
-    public function getAllIngredientEntities() : Array {
+    public function getAllIngredientEntities() : array {
         $query = $this->db->prepare('SELECT `id`, `name` FROM `ingredients`;');
-        $query->setFetchMode(\PDO::FETCH_CLASS, '../Entities/IngredientEntity');
+        $query->setFetchMode(\PDO::FETCH_CLASS, 'Mamoi\Entities\IngredientEntity');
         $query->execute();
         return $query->fetchAll();
     }
