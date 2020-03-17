@@ -1,0 +1,12 @@
+.ingredient {
+    border-radius: 25%;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    background-color: #1BAB49;
+    color: #FFFFFF;
+    float: left;
+    margin: 5px;
+}
+
+.ingredient label {
+    padding: 3px 5px;
+}
