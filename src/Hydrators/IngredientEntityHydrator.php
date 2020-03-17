@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Mamoi\Entities;
+namespace Mamoi\Hydrators;
 
 
 class IngredientEntityHydrator {
