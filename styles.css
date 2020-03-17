@@ -20,9 +20,12 @@ p {
 
 header {
     background-color: #EDDA34;
-    background-image: url('');
+    background-image: url('./img/header-image.jpg');
+    background-position: bottom;
+    background-size: cover;
     padding: 5px;
     border-radius: 0 0 5px 5px;
+    color: #FFFFFF;
 }
 
 h1, h3 {
@@ -75,4 +78,10 @@ button:hover {
 button:active {
     color: #1BAB49;
 
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
 }

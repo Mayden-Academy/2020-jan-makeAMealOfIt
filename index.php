@@ -32,7 +32,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 <main>
     <h3>Select your ingredients:</h3>
-    <form>
+    <form method='get' action='recipe.php'>
     <div class='ingredients'>
 
     </div>
