@@ -26,7 +26,7 @@ class IngredientViewHelper
      * @param IngredientEntity $ingredient
      * @return string
      */
-    static function generateIngredientHtml (IngredientEntity $ingredient) {
+    static function generateIngredientHtml (IngredientEntity $ingredient) : string {
 
         $id = $ingredient->getId();
         $name = $ingredient->getName();
