@@ -9,7 +9,8 @@ class IngredientEntity
     private $id;
     private $name;
 
-    /**
+    /** Getter for id
+     *
      * @return mixed
      */
     public function getId()
@@ -17,7 +18,8 @@ class IngredientEntity
         return $this->id;
     }
 
-    /**
+    /** Getter for name
+     *
      * @return mixed
      */
     public function getName()
