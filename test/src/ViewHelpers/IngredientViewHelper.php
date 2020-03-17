@@ -39,8 +39,7 @@ class IngredientViewHelperTest extends TestCase {
 
         $ingredient = $this->createMock(\Mamoi\Entities\IngredientEntity::class);
         $ingredient->method('getId')->willReturn([34]);
-        $ingredient->method('getName')->willReturn([34, 2, 3
-        ]);
+        $ingredient->method('getName')->willReturn([34, 2, 3]);
 
         $result = \Mamoi\ViewHelpers\IngredientViewHelper::generateIngredientHtml($ingredient);
 
