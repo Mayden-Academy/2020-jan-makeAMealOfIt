@@ -22,7 +22,7 @@ class IngredientViewHelper
     }
 
     /**
-     * Builds the HTML for a single ingredient entity. 
+     * Builds the HTML for a single ingredient entity.
      * @param IngredientEntity $ingredient
      * @return string
      */
