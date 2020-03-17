@@ -8,5 +8,3 @@ $db = new Db();
 $connection = $db->getConnection();
 $ingredientHydrator = new IngredientEntityHydrator($connection);
 $allIngredients = $ingredientHydrator->getAllIngredientEntities();
-
-var_dump($allIngredients);
