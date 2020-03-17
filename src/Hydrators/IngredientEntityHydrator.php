@@ -1,5 +1,9 @@
 <?php
 
+
+namespace Mamoi\Entities;
+
+
 class IngredientEntityHydrator {
     private $db;
     public function __construct(PDO $db) {
@@ -12,3 +16,4 @@ class IngredientEntityHydrator {
         return $query->fetchAll();
     }
 }
+
