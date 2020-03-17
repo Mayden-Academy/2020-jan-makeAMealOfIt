@@ -1,6 +1,5 @@
 <?php
 
-namespace Mamoi;
 require_once __DIR__ . '/vendor/autoload.php';
 use \Mamoi\Resources\Db;
 
@@ -13,11 +12,11 @@ $connection = $db->getConnection();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Make a Meal of It</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <link rel='stylesheet' type='text/css' href='normalize.css' />
     <link rel='stylesheet' type='text/css' href='styles.css' />
 </head>
