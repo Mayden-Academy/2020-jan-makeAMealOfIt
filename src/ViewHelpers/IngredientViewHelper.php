@@ -32,11 +32,11 @@ class IngredientViewHelper
         $name = $ingredient->getName();
         $output = '';
 
-        $output .= '<div class=\"ingredient\">';
-        $output .= '<label>';
-        $output .= '<input type=\"checkbox\" name=\"' . $name . '\" id=\"' . $name . '\">';
-        $output .= $name;
-        $output .= '</label></div>';
+        $output .= "<div class=\"ingredient\">";
+        $output .= "<label>";
+        $output .= "<input type=\"checkbox\" name=\"" . $name . "\" id=\"" . $name . "\">";
+        $output .= ucwords($name);
+        $output .= "</label></div>";
 
         return $output;
 
