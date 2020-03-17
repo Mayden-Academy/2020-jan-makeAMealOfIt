@@ -7,6 +7,7 @@ use \Mamoi\Entities\IngredientEntity;
 class IngredientViewHelper
 {
     /**
+     * Outputs the HTML for all the ingredients
      * @param array $allTheIngredients
      * @return string
      */
@@ -21,6 +22,7 @@ class IngredientViewHelper
     }
 
     /**
+     * Builds the HTML for a single ingredient entity. 
      * @param IngredientEntity $ingredient
      * @return string
      */
