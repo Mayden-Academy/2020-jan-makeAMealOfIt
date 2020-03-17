@@ -21,31 +21,13 @@ class IngredientViewHelperTest extends TestCase {
 
     }
 
-    public function testGenerateIngredientHtmlFailure() {
-
-        $ingredient = $this->createMock(\Mamoi\Entities\IngredientEntity::class);
-        $ingredient->method('getId')->willReturn('2');
-        $ingredient->method('getName')->willReturn('NOTATEST');
-
-        $result = \Mamoi\ViewHelpers\IngredientViewHelper::generateIngredientHtml($ingredient);
-
-        $expected =  '<div class=\"ingredient\"><label><input type=\"checkbox\" name=\"TESTNAME\" id=\"TESTNAME\">TESTNAME</label></div>';
-
-        $this->assertEquals($expected, $result);
-
-    }
-
     public function testGenerateIngredientHtmlMalformed() {
 
-        $ingredient = $this->createMock(\Mamoi\Entities\IngredientEntity::class);
-        $ingredient->method('getId')->willReturn([34]);
-        $ingredient->method('getName')->willReturn([34, 2, 3]);
+        $this->expectException(TypeError::class);
 
-        $result = \Mamoi\ViewHelpers\IngredientViewHelper::generateIngredientHtml($ingredient);
+        $input = 'hello';
 
-        $expected =  '<div class=\"ingredient\"><label><input type=\"checkbox\" name=\"TESTNAME\" id=\"TESTNAME\">TESTNAME</label></div>';
-
-        $this->assertEquals($expected, $result);
+        $result = \Mamoi\ViewHelpers\IngredientViewHelper::generateIngredientHtml($input);
 
     }
 
