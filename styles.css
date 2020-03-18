@@ -18,6 +18,34 @@ p {
     background-color: #1BAB49;
 }
 
+.ingredient {
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
+    background-color: #1BAB49;
+    color: #FFFFFF;
+    float: left;
+    margin-top: 5px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.ingredient input {
+    margin-right: 5px;
+}
+
+.ingredients {
+    overflow: auto;
+}
+
+.ingredients div {
+    float: left;
+    padding: 5px;
+}
+
 header {
     background-color: #EDDA34;
     background-image: url('./img/header-image.jpg');
@@ -57,23 +85,7 @@ a {
     color: #F77913;
 }
 
-button {
-    background-color: #F77913;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    outline-style: none;
-}
 
-button:hover {
-    cursor: pointer;
-}
-
-button:active {
-    color: #1BAB49;
-}
 
 @media only screen and (max-width: 800px) {
     .container {
