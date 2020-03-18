@@ -11,7 +11,8 @@ class IngredientViewHelper
      * @param array $allTheIngredients
      * @return string
      */
-    static function displayAllIngredients(array $allTheIngredients) {
+    public static function displayAllIngredients(array $allTheIngredients) : string
+    {
         $result = '';
 
         foreach ($allTheIngredients as $ingredient) {
@@ -26,8 +27,8 @@ class IngredientViewHelper
      * @param IngredientEntity $ingredient
      * @return string
      */
-    static function generateIngredientHtml (IngredientEntity $ingredient) : string {
-
+    public static function generateIngredientHtml (IngredientEntity $ingredient) : string
+    {
         $id = $ingredient->getId();
         $name = $ingredient->getName();
         $output = '';
@@ -39,6 +40,5 @@ class IngredientViewHelper
         $output .= "</label></div>";
 
         return $output;
-
     }
 }

@@ -15,7 +15,7 @@ class Db
      *
      * @return \PDO instantiated object which contains database credentials
      */
-    public function getConnection()
+    public function getConnection() : \PDO
     {
         return $this->db;
     }
