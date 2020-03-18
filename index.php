@@ -42,9 +42,10 @@ $allIngredients = $ingredientHydrator->getAllIngredientEntities();
             <h3>Select your ingredients:</h3>
             <form method='get' action='recipe.php'>
                 <div class='ingredients'>
-
+                    <?php
+                    echo \Mamoi\ViewHelpers\IngredientViewHelper::displayAllIngredients($allIngredients);
+                    ?>
                 </div>
-                <button>Search</button>
             </form>
         </main>
 

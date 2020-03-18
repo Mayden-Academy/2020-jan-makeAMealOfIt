@@ -7,6 +7,9 @@ require_once dirname(__FILE__, 4) . '/vendor/autoload.php';
 
 class IngredientViewHelperTest extends TestCase {
 
+    /**
+     * Success test case for generateIngredientHtml() method.
+     */
     public function testGenerateIngredientHtmlSuccess() {
 
         $ingredient = $this->createMock(\Mamoi\Entities\IngredientEntity::class);
@@ -21,6 +24,10 @@ class IngredientViewHelperTest extends TestCase {
 
     }
 
+    /**
+     * Malformed test for generateIngredientHtml() method.
+     * We expect an exception when we pass un unexpected data type as a parameter.
+     */
     public function testGenerateIngredientHtmlMalformed() {
 
         $this->expectException(TypeError::class);
