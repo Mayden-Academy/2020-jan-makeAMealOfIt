@@ -8,12 +8,11 @@ class RecipeApiCall {
      *
      * @param string $url which is created when user selects and submits items from then ingredients list
      *
-     * @return array of results from the recipepuppy API with the
+     * @return array of results from the recipepuppy API with a list of meals
      */
     public static function createCurl(string $query) : array
     {
         $url = 'http://www.recipepuppy.com/api/?i=' . $query ;
-
         $curlRequest = curl_init();
         curl_setopt($curlRequest, CURLOPT_URL, $url);
         curl_setopt($curlRequest, CURLOPT_RETURNTRANSFER, 1);
