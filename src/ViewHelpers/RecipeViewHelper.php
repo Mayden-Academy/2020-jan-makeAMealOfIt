@@ -29,6 +29,18 @@ class RecipeViewHelper
      */
     public static function generateRecipeHtml (RecipeEntity $recipe) : string
     {
+        $title = $recipe->title;
+        $href = $recipe->href;
+        $ingredients = $recipe->ingredients;
+        $img = $recipe->img;
 
+        $output = "<div class=\"recipe\">";
+        $output .= "<h3>$title</h3>";
+        $output .= "<a href=\"$href\" target=\"_blank\">$href</a>";
+        $output .= "<div>$ingredients</div>";
+        $output .= "<img src=\"$img\" alt=\"image that may or may not relate to $title\" />";
+        $output .="</div>";
+
+        return $output;
     }
 }
