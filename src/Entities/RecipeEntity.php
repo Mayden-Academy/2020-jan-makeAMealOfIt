@@ -1,6 +1,8 @@
 <?php
 
+
 namespace Mamoi\Entities;
+
 
 class RecipeEntity
 {
