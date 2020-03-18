@@ -8,14 +8,17 @@ use Mamoi\Entities\RecipeEntity;
 class RecipeEntityHydrator
 {
 
-    public static function getAllRecipeEntities(\stdClass $apiResponse) : array
+    public static function getAllRecipeEntities(array $apiResponse) : array
     {
-        $recipes = $apiResponse->results;
-        foreach($recipes as $recipe) {
-            $title = trim($recipe->title);
-            $href = trim($recipe->href);
-            $ingredients = trim($recipe->ingredients);
-            $thumbnail = trim($recipe->thumbnail);
+        foreach($apiResponse as $recipe) {
+            $title = trim($recipe['title']);
+            $href = trim($recipe['href']);
+            $ingredients = trim($recipe['ingredients']);
+            if (trim($recipe['thumbnail']) == '') {
+                $thumbnail = __DIR__ . '/img/default_thumbnail.png';
+            } else {
+                $thumbnail = trim($recipe['thumbnail']);
+            }
 
             $recipeEntity = new RecipeEntity($title, $href, $ingredients, $thumbnail);
             $recipeEntities[] = $recipeEntity;
