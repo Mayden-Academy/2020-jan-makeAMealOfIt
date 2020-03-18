@@ -17,11 +17,11 @@ class RecipeViewHelperTest extends TestCase
         $recipe->method('getTitle')->willReturn('Cheesy Peas');
         $recipe->method('getHref')->willReturn('https://cookeatshare.com/recipes/best-ever-macaroni-salad-51224');
         $recipe->method('getIngredients')->willReturn('Cheese, Peas');
-        $recipe->method('getImg')->willReturn('http://img.recipepuppy.com/769587.jpg');
+        $recipe->method('getThumbnail')->willReturn('http://img.recipepuppy.com/769587.jpg');
 
         $result = \Mamoi\ViewHelpers\RecipeViewHelper::generateRecipeHtml($recipe);
 
-        $expected =  "<div class=\"recipe\"><div class=\"recipeImg\"><img src=\"http://img.recipepuppy.com/769587.jpg\" alt=\"image that may or may not relate to Cheesy Peas\" /></div><div><h4>Cheesy PeasCheesy Peas</h4>Ingredients: Cheese, Peas<a href=\"http://img.recipepuppy.com/769587.jpg\" target=\"_blank\">See Recipe</a></div></div>";
+        $expected =  "<div class=\"recipe\"><div class=\"recipeImg\"><img src=\"http://img.recipepuppy.com/769587.jpg\" alt=\"image that may or may not relate to Cheesy Peas\" /></div><div><h4>Cheesy Peas</h4>Ingredients: Cheese, Peas<a href=\"https://cookeatshare.com/recipes/best-ever-macaroni-salad-51224\" target=\"_blank\">See Recipe</a></div></div>";
 
         $this->assertEquals($expected, $result);
     }
