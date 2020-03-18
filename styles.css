@@ -69,11 +69,18 @@ h3 {
     margin: 0;
 }
 
-article, main {
+article, main, .back-button {
     margin: 40px auto;
     background-color: #FFFFFF;
     padding: 15px;
     border-radius: 5px;
+}
+
+.back-button {
+   width: 25%;
+    margin: 20px 15px;
+    margin-left: 70px;
+    padding: 10px;
 }
 
 article {
@@ -85,6 +92,9 @@ a {
     color: #F77913;
 }
 
+.ingredients-list {
+    color: #F77913;
+}
 
 
 @media only screen and (max-width: 800px) {
