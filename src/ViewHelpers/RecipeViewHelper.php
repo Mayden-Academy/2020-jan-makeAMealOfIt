@@ -35,10 +35,10 @@ class RecipeViewHelper
         $img = $recipe->img;
 
         $output = "<div class=\"recipe\">";
-        $output .= "<h3>$title</h3>";
-        $output .= "<a href=\"$href\" target=\"_blank\">$href</a>";
-        $output .= "<div>$ingredients</div>";
         $output .= "<img src=\"$img\" alt=\"image that may or may not relate to $title\" />";
+        $output .= "<h4>$title</h4>";
+        $output .= "<div>$ingredients</div>";
+        $output .= "<a href=\"$href\" target=\"_blank\">$href</a>";
         $output .="</div>";
 
         return $output;

@@ -56,7 +56,7 @@ header {
     color: #FFFFFF;
 }
 
-h1, h3 {
+h1, h3, h4 {
     font-family: 'Permanent Marker', cursive;
 }
 
@@ -85,10 +85,21 @@ a {
     color: #F77913;
 }
 
+.recipe {
+    width: 50%;
+    overflow: auto;
+}
 
+.recipe img {
+    float: left;
+}
 
 @media only screen and (max-width: 800px) {
     .container {
         width: 100%;
+    }
+
+    .recipe {
+        width: 50%;
     }
 }
