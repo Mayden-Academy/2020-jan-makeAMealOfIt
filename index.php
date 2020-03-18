@@ -46,6 +46,7 @@ $allIngredients = $ingredientHydrator->getAllIngredientEntities();
                     echo \Mamoi\ViewHelpers\IngredientViewHelper::displayAllIngredients($allIngredients);
                     ?>
                 </div>
+                <input class="submit" type="submit">
             </form>
         </main>
 
