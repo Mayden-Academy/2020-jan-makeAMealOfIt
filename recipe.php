@@ -33,7 +33,7 @@ use \Mamoi\Hydrators\RecipeEntityHydrator;
 
     <article>
         <h3>Results:</h3>
-        <p>We found these recipes for <span class="ingredients-list">echo ingredient list here</span> </p>
+        <p>We found these recipes for <span class="ingredients-list"></span> </p>
     </article>
 
     <main>
