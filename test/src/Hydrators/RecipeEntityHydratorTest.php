@@ -30,8 +30,44 @@ class RecipeEntityHydratorTest extends TestCase
         $result = \Mamoi\Hydrators\RecipeEntityHydrator::getAllRecipeEntities($apiResult);
         $this->assertInstanceOf(Mamoi\Entities\RecipeEntity::class, $result[0]);
         $this->assertInstanceOf(Mamoi\Entities\RecipeEntity::class, $result[1]);
-        $this->assertIsArray($result);
         $this->assertCount(2, $result);
+
+    }
+
+    /** Failure test for getAllRecipeEntities. Passes a property with a complex data type when string expected. Method should skip the incongruent entity.
+     *
+     */
+    public function testFailureGetAllRecipeEntities()
+    {
+        $apiResult = [
+            [
+                "title"=>['After Easter Layered Salad', 'Thing'],
+                "href"=>'http://www.recipezaar.com/French-Bread-Sausage-Breakfast-Roll-175244',
+                "ingredients"=>'sausage',
+                "thumbnail"=>'http://img.recipepuppy.com/573680.jpg'
+            ],
+            [
+                "title"=>'Garden Chili Tacos \r\n\t\t\n',
+                "href"=>'http:\/\/www.kraftfoods.com\/kf\/recipes\/garden-chili-tacos-57028.aspx',
+                "ingredients"=>'ground beef, pepper, chili powder, red kidney beans, corn, green pepper, tomato, taco shells, sour cream',
+                "thumbnail"=>'http:\/\/img.recipepuppy.com\/634058.jpg'
+            ]
+        ];
+
+        $result = \Mamoi\Hydrators\RecipeEntityHydrator::getAllRecipeEntities($apiResult);
+        $this->assertInstanceOf(Mamoi\Entities\RecipeEntity::class, $result[0]);
+        $this->assertCount(1, $result);
+    }
+
+    /** Malformed test. Passing a scalar data type when array expected
+     *
+     */
+    public function testMalformedGetAllRecipeEntities()
+    {
+        $this->expectException(TypeError::class);
+        $input = 'Recipes';
+
+        $result = \Mamoi\Hydrators\RecipeEntityHydrator::getAllRecipeEntities($input);
 
     }
 

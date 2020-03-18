@@ -8,24 +8,37 @@ use Mamoi\Entities\RecipeEntity;
 class RecipeEntityHydrator
 {
 
+    /** Hydrates Api json data into RecipeEntity objects
+     *
+     * @param array $apiResponse Takes assoc array decoded from json
+     * @return array Returns array of RecipeEntity objects
+     */
     public static function getAllRecipeEntities(array $apiResponse) : array
     {
-        foreach($apiResponse as $recipe) {
-            $title = trim($recipe['title']);
-            $href = trim($recipe['href']);
-            $ingredients = trim($recipe['ingredients']);
-            if (trim($recipe['thumbnail']) == '') {
-                $thumbnail = __DIR__ . '/img/default_thumbnail.png';
-            } else {
-                $thumbnail = trim($recipe['thumbnail']);
-            }
+        $recipeEntities = [];
 
-            $recipeEntity = new RecipeEntity($title, $href, $ingredients, $thumbnail);
-            $recipeEntities[] = $recipeEntity;
+        foreach($apiResponse as $recipe) {
+            if (is_string($recipe['title'])
+                && is_string($recipe['href'])
+                && is_string($recipe['ingredients'])
+                && is_string($recipe['thumbnail'])) {
+
+                $title = trim($recipe['title']);
+                $href = trim($recipe['href']);
+                $ingredients = trim($recipe['ingredients']);
+
+                if (trim($recipe['thumbnail']) == '') {
+                    $thumbnail = dirname(__FILE__, 3) . '/img/default_thumbnail.png';
+                } else {
+                    $thumbnail = trim($recipe['thumbnail']);
+                }
+
+                $recipeEntity = new RecipeEntity($title, $href, $ingredients, $thumbnail);
+                $recipeEntities[] = $recipeEntity;
+            }
         }
 
         return $recipeEntities;
     }
-
 
 }
