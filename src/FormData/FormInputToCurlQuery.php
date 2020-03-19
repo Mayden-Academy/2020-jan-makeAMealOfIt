@@ -1,6 +1,7 @@
 <?php
 
 namespace Mamoi\FormData;
+use \Mamoi\Validators\Validator;
 
 class FormInputToCurlQuery
 {
@@ -16,21 +17,23 @@ class FormInputToCurlQuery
         $searchInput = '';
         foreach ($getData as $key => $item) {
             if (!is_int($key)) {
-                if ($key == 'searchInput') {
-                    $searchInput = $item; //call validator as necessary
+                if ($key == 'userIngredients') {
+                    $searchInput = \Mamoi\Validators\Validator::validateString($item);
+                    $searchInput = self::formatSearchInput($item);
+                } elseif ($key != 'userIngredients') {
+                    $validResults[] = $key;
                 } else {
-                $validResults[] = $key;
+                    $validResults = [];
                 }
             }
         }
-        return implode(',',$validResults) . ',' . $searchInput;
+
+        return (implode(',',$validResults)) . ',' . $searchInput;
     }
 
     public static function formatSearchInput ($validatedInput)
     {
-        $validatedInput = explode(' ', $validatedInput);
-        $trimmedArray = array_walk ($validatedInput, 'trim');
-        $validatedInput = implode (',', $trimmedArray);
+        return str_replace(' ', ',',  $validatedInput);
     }
 
     public static function trim ($arrayItem)

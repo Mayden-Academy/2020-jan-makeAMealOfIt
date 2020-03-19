@@ -7,7 +7,7 @@ use \Mamoi\Hydrators\RecipeEntityHydrator;
 use \Mamoi\ViewHelpers\RecipeViewHelper;
 $getData = [];
 
-if(count($_GET) > 0) {
+if(count($_GET) >= 1 && $_GET['userIngredients'] !='') {
     $getData = $_GET;
     $apiQuery = FormInputToCurlQuery::createCheckboxQueryUrl($getData);
     $apiResults = RecipeApiCall::createCurl($apiQuery);
