@@ -17,13 +17,16 @@ class RecipeApiCall {
         curl_setopt($curlRequest, CURLOPT_URL, $url);
         curl_setopt($curlRequest, CURLOPT_RETURNTRANSFER, 1);
         $output = curl_exec($curlRequest);
-        $result = json_decode($output, true);
-        curl_close($curlRequest);
-        if(array_key_exists('results', $result)) {
-            return $result['results'];
+        if (curl_getinfo($curlRequest, CURLINFO_RESPONSE_CODE) === 200) {
+            $result = json_decode($output, true);
+            curl_close($curlRequest);
+            if (array_key_exists('results', $result)) {
+                return $result['results'];
+            } else {
+                return [];
+            }
         } else {
-           $result = [];
-           return $result;
+            return [];
         }
     }
 }
