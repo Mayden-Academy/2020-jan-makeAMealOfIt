@@ -7,7 +7,9 @@ use \Mamoi\Hydrators\RecipeEntityHydrator;
 use \Mamoi\ViewHelpers\RecipeViewHelper;
 $getData = [];
 
-if(count($_GET) >= 1 && $_GET['userIngredients'] !='') {
+if (count($_GET) === 1 && $_GET['userIngredients'] === '') {
+    header("location: index.php");
+} else {
     $getData = $_GET;
     $apiQuery = FormInputToCurlQuery::createCheckboxQueryUrl($getData);
     $apiResults = RecipeApiCall::createCurl($apiQuery);
@@ -17,8 +19,6 @@ if(count($_GET) >= 1 && $_GET['userIngredients'] !='') {
     } else {
         $recipeHtml = "No recipes found.";
     }
-} else {
-    header("location: index.php");
 }
 
 ?>
