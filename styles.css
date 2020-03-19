@@ -57,7 +57,7 @@ header {
     color: #FFFFFF;
 }
 
-h1, h3 {
+h1, h3, h4 {
     font-family: 'Permanent Marker', cursive;
 }
 
@@ -89,16 +89,44 @@ article {
     width: 80%;
 }
 
+main {
+    overflow: auto;
+}
+
 a {
     text-decoration: none;
     color: #F77913;
+}
+
+.recipe {
+    width: 48%;
+    overflow: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #F77913;
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+    margin: 1%;
+}
+
+.recipe div {
+    padding: 0 5px;
+}
+
+.recipe img {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.recipeHeading {
+    overflow: auto;
 }
 
 .ingredients-list {
     color: #F77913;
 }
 
-.submit {
+.submit, .recipe a {
     background-color: #F77913;
     color: #FFFFFF;
     border: none;
@@ -108,16 +136,30 @@ a {
     outline-style: none;
     margin-top: 10px;
     box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
+    text-align: center;
 }
-.submit:hover {
+
+.recipe a {
+    display: block;
+    margin: 15px 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.submit:hover, .recipe a:hover {
     cursor: pointer;
 }
-.submit:active {
+.submit:active, .recipe a:active {
     color: #1BAB49;
 }
 
 @media only screen and (max-width: 800px) {
     .container {
         width: 100%;
+    }
+
+    .recipe {
+        width: 98%;
     }
 }
