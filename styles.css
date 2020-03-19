@@ -40,6 +40,7 @@ p {
 
 .ingredients {
     overflow: auto;
+    margin-bottom: 20px;
 }
 
 .ingredients div {
@@ -124,6 +125,15 @@ a {
     color: #F77913;
 }
 
+input[type=text] {
+    display: block;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
 .submit, .recipe a {
     background-color: #F77913;
     color: #FFFFFF;
@@ -159,5 +169,9 @@ a {
 
     .recipe {
         width: 98%;
+    }
+
+    input[type=text] {
+        width: 90%;
     }
 }
