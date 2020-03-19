@@ -12,7 +12,12 @@ class FormInputToCurlQuery
  * @return string $ingredientUrlQuery
  */
     public static function createCheckboxQueryUrl(array $getData) : string {
-        $ingredients = array_keys($getData);
-        return $ingredientUrlQuery = implode(',',$ingredients);
+        $validResults = [];
+        foreach ($getData as $key => $item) {
+            if (!is_int($key)) {
+                $validResults[] = $key;
+            }
+        }
+        return $ingredientUrlQuery = implode(',',$validResults);
     }
 }
