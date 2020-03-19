@@ -98,33 +98,32 @@ a {
     color: #F77913;
 }
 
-.recipeContainer {
-    width: 50%;
-    padding: 10px;
-    float: left;
-}
-
 .recipe {
-    width: 100%;
+    width: 48%;
     overflow: auto;
     background-color: #FFFFFF;
     border: 1px solid #F77913;
     border-radius: 5px;
     padding: 10px;
     float: left;
+    margin: 1%;
 }
 
 .recipe div {
-    float: left;
     padding: 0 5px;
 }
 
 .recipe img {
     float: left;
+    margin: 0 10px 10px 0;
 }
 
 .recipe a {
     display: block;
+    margin: 15px 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .recipeHeading {
@@ -159,7 +158,7 @@ a {
         width: 100%;
     }
 
-    .recipeContainer {
-        width: 100%;
+    .recipe {
+        width: 98%;
     }
 }
