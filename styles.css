@@ -89,6 +89,10 @@ article {
     width: 80%;
 }
 
+main {
+    overflow: auto;
+}
+
 a {
     text-decoration: none;
     color: #F77913;
@@ -104,6 +108,7 @@ a {
     width: 100%;
     overflow: auto;
     background-color: #FFFFFF;
+    border: 1px solid #F77913;
     border-radius: 5px;
     padding: 10px;
     float: left;
@@ -130,7 +135,7 @@ a {
     color: #F77913;
 }
 
-.submit {
+.submit, .recipe a {
     background-color: #F77913;
     color: #FFFFFF;
     border: none;
@@ -140,11 +145,12 @@ a {
     outline-style: none;
     margin-top: 10px;
     box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
+    text-align: center;
 }
-.submit:hover {
+.submit:hover, .recipe a:hover {
     cursor: pointer;
 }
-.submit:active {
+.submit:active, .recipe a:active {
     color: #1BAB49;
 }
 
