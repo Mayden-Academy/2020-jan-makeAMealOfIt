@@ -31,6 +31,7 @@ p {
     padding: 0 15px;
     height: 30px;
     line-height: 30px;
+    cursor: pointer;
 }
 
 .ingredient input {
@@ -56,7 +57,7 @@ header {
     color: #FFFFFF;
 }
 
-h1, h3 {
+h1, h3, h4 {
     font-family: 'Permanent Marker', cursive;
 }
 
@@ -69,15 +70,27 @@ h3 {
     margin: 0;
 }
 
-article, main {
+article, main, .back-button {
     margin: 40px auto;
     background-color: #FFFFFF;
     padding: 15px;
     border-radius: 5px;
 }
 
+.back-button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 20px 15px;
+    padding: 10px;
+}
+
 article {
     width: 80%;
+}
+
+main {
+    overflow: auto;
 }
 
 a {
@@ -85,10 +98,66 @@ a {
     color: #F77913;
 }
 
+.recipe {
+    width: 48%;
+    overflow: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #F77913;
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+    margin: 1%;
+}
 
+.recipe div {
+    padding: 0 5px;
+}
+
+.recipe img {
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 80px;
+    height: 80px;
+}
+
+.ingredients-list {
+    color: #F77913;
+}
+
+.submit, .recipe a {
+    background-color: #F77913;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline-style: none;
+    margin-top: 10px;
+    box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
+    text-align: center;
+}
+
+.recipe a {
+    display: block;
+    margin: 15px 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.submit:hover, .recipe a:hover {
+    cursor: pointer;
+}
+.submit:active, .recipe a:active {
+    color: #1BAB49;
+}
 
 @media only screen and (max-width: 800px) {
     .container {
         width: 100%;
+    }
+
+    .recipe {
+        width: 98%;
     }
 }
