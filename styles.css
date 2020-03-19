@@ -118,14 +118,6 @@ a {
     margin: 0 10px 10px 0;
 }
 
-.recipe a {
-    display: block;
-    margin: 15px 0;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-}
-
 .recipeHeading {
     overflow: auto;
 }
@@ -146,6 +138,15 @@ a {
     box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
     text-align: center;
 }
+
+.recipe a {
+    display: block;
+    margin: 15px 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
 .submit:hover, .recipe a:hover {
     cursor: pointer;
 }
