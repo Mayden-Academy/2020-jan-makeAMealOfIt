@@ -21,7 +21,7 @@ class RecipeViewHelperTest extends TestCase
 
         $result = \Mamoi\ViewHelpers\RecipeViewHelper::generateRecipeHtml($recipe);
 
-        $expected =  "<div class=\"recipe\"><div class=\"recipeImg\"><img src=\"http://img.recipepuppy.com/769587.jpg\" alt=\"image that may or may not relate to Cheesy Peas\" /></div><div><h4>Cheesy Peas</h4>Ingredients: Cheese, Peas<a href=\"https://cookeatshare.com/recipes/best-ever-macaroni-salad-51224\" target=\"_blank\">See Recipe</a></div></div>";
+        $expected =  "<div class=\"recipeContainer\"><div class=\"recipe\"><div class=\"recipeImg\"><img src=\"http://img.recipepuppy.com/769587.jpg\" alt=\"image that may or may not relate to Cheesy Peas\" /></div><div><h4>Cheesy Peas</h4>Ingredients: Cheese, Peas<a href=\"https://cookeatshare.com/recipes/best-ever-macaroni-salad-51224\" target=\"_blank\">See Recipe</a></div></div></div>";
 
         $this->assertEquals($expected, $result);
     }
