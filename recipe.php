@@ -49,7 +49,7 @@ if(count($_GET) >= 1 && $_GET['userIngredients'] !='') {
 
     <article>
         <h3>Results:</h3>
-        <p>We found these recipes for <span class="ingredients-list"><?php echo implode(", ", array_keys($getData));?></span></p>
+        <p>We found these recipes for <span class="ingredients-list"><?php echo str_replace(',', ', ', $apiQuery);?></span></p>
     </article>
 
     <main>

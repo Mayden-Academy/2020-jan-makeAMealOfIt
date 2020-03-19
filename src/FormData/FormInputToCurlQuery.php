@@ -18,8 +18,8 @@ class FormInputToCurlQuery
         foreach ($getData as $key => $item) {
             if (!is_int($key)) {
                 if ($key == 'userIngredients') {
-                    $searchInput = \Mamoi\Validators\Validator::validateString($item);
-                    $searchInput = self::formatSearchInput($item);
+                    $searchInput = Validator::validateString($item);
+                    $searchInput = self::formatSearchInput($searchInput);
                 } elseif ($key != 'userIngredients') {
                     $validResults[] = $key;
                 } else {
