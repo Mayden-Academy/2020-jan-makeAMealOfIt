@@ -116,10 +116,8 @@ a {
 .recipe img {
     float: left;
     margin: 0 10px 10px 0;
-}
-
-.recipeHeading {
-    overflow: auto;
+    width: 80px;
+    height: 80px;
 }
 
 .ingredients-list {

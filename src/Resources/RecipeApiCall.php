@@ -12,15 +12,19 @@ class RecipeApiCall {
      */
     public static function createCurl(string $query) : array
     {
-        $url = 'http://www.recipepuppy.com/api/?i=' . $query ;
+        $url = 'http://www.recipepuppy.com/api/?i=' . $query;
         $curlRequest = curl_init();
         curl_setopt($curlRequest, CURLOPT_URL, $url);
         curl_setopt($curlRequest, CURLOPT_RETURNTRANSFER, 1);
         $output = curl_exec($curlRequest);
         $result = json_decode($output, true);
         curl_close($curlRequest);
-        return $result['results'];
-
+        if(array_key_exists('results', $result)) {
+            return $result['results'];
+        } else {
+           $result = [];
+           return $result;
+        }
     }
 }
 

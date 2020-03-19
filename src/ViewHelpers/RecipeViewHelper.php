@@ -38,7 +38,7 @@ class RecipeViewHelper
         $output .= "<img src=\"$img\" alt=\"$title\" />";
         $output .= "<div><h4>$title</h4>Ingredients: $ingredients";
         $output .= "<a href=\"$href\" target=\"_blank\">See Recipe</a></div>";
-        $output .="</div>";
+        $output .= "</div>";
 
         return $output;
     }

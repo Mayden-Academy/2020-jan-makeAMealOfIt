@@ -1,8 +1,25 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-//use the API call
+use \Mamoi\FormData\FormInputToCurlQuery;
+use \Mamoi\Resources\RecipeApiCall;
 use \Mamoi\Hydrators\RecipeEntityHydrator;
+use \Mamoi\ViewHelpers\RecipeViewHelper;
+$getData = [];
+
+if(count($_GET) > 0) {
+    $getData = $_GET;
+    $apiQuery = FormInputToCurlQuery::createCheckboxQueryUrl($getData);
+    $apiResults = RecipeApiCall::createCurl($apiQuery);
+    if(count($apiResults) > 0) {
+        $allRecipeEntities = RecipeEntityHydrator::getAllRecipeEntities($apiResults);
+        $recipeHtml = RecipeViewHelper::displayAllRecipes($allRecipeEntities);
+    } else {
+        $recipeHtml = "No recipes found.";
+    }
+} else {
+    header("location: index.php");
+}
 
 ?>
 
@@ -32,11 +49,11 @@ use \Mamoi\Hydrators\RecipeEntityHydrator;
 
     <article>
         <h3>Results:</h3>
-        <p>We found these recipes for <span class="ingredients-list"></span> </p>
+        <p>We found these recipes for <span class="ingredients-list"><?php echo implode(", ", array_keys($getData));?></span></p>
     </article>
 
     <main>
-        <!--echo recipe php here-->
+        <?php echo $recipeHtml;?>
     </main>
 
 </div>

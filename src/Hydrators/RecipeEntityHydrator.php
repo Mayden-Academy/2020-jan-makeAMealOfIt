@@ -28,7 +28,7 @@ class RecipeEntityHydrator
                 $ingredients = trim($recipe['ingredients']);
 
                 if (trim($recipe['thumbnail']) == '') {
-                    $thumbnail = dirname(__FILE__, 3) . '/img/default_thumbnail.png';
+                    $thumbnail = 'img/default_thumbnail.png';
                 } else {
                     $thumbnail = trim($recipe['thumbnail']);
                 }
