@@ -34,7 +34,7 @@ class RecipeViewHelper
         $ingredients = $recipe->getIngredients();
         $img = $recipe->getThumbnail();
 
-        $output = "<div class=\"recipeContainer\"></div><div class=\"recipe\">";
+        $output = "<div class=\"recipeContainer\"><div class=\"recipe\">";
         $output .= "<div class=\"recipeImg\"><img src=\"$img\" alt=\"image that may or may not relate to $title\" />";
         $output .= "</div>";
         $output .= "<div><h4>$title</h4>Ingredients: $ingredients";
