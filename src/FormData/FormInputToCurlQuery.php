@@ -2,7 +2,6 @@
 
 namespace Mamoi\FormData;
 
-
 class FormInputToCurlQuery
 {
 /**

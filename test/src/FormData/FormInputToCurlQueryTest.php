@@ -33,5 +33,4 @@ class FormInputToCurlQueryTest extends TestCase
         $testInput = 2;
         $case = FormInputToCurlQuery::createCheckboxQueryUrl($testInput);
     }
-
 }
