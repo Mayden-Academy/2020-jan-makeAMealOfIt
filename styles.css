@@ -31,6 +31,7 @@ p {
     padding: 0 15px;
     height: 30px;
     line-height: 30px;
+    cursor: pointer;
 }
 
 .ingredient input {
@@ -69,11 +70,19 @@ h3 {
     margin: 0;
 }
 
-article, main {
+article, main, .back-button {
     margin: 40px auto;
     background-color: #FFFFFF;
     padding: 15px;
     border-radius: 5px;
+}
+
+.back-button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 20px 15px;
+    padding: 10px;
 }
 
 article {
@@ -115,6 +124,28 @@ a {
 
 .recipeHeading {
     overflow: auto;
+}
+
+.ingredients-list {
+    color: #F77913;
+}
+
+.submit {
+    background-color: #F77913;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline-style: none;
+    margin-top: 10px;
+    box-shadow: 2px 2px 3px rgba(30,30,30,0.4);
+}
+.submit:hover {
+    cursor: pointer;
+}
+.submit:active {
+    color: #1BAB49;
 }
 
 @media only screen and (max-width: 800px) {
