@@ -46,7 +46,9 @@ $allIngredients = $ingredientHydrator->getAllIngredientEntities();
                     echo \Mamoi\ViewHelpers\IngredientViewHelper::displayAllIngredients($allIngredients);
                     ?>
                 </div>
-                <input class="submit" type="submit" value="search">
+                <h3>Add your own:</h3>
+                <input type="text" placeholder="Enter ingredients separated by a space" name="userIngredients" id="userIngredients" maxlength="255" />
+                <input class="submit" type="submit" value="search" />
             </form>
         </main>
 
